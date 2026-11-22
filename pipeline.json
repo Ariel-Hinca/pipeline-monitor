@@ -1,0 +1,106 @@
+{
+  "stages": [
+    {
+      "id": "planning",
+      "title": "Planning & Requirements",
+      "next": "Write the outcome, who it is for, and what you are not building.",
+      "items": [
+        { "id": "outcome", "label": "The outcome is written down", "check": "manual" },
+        { "id": "users", "label": "The people who use it are named", "check": "manual" },
+        { "id": "scope", "label": "What is out of scope is named", "check": "manual" }
+      ]
+    },
+    {
+      "id": "local",
+      "title": "Local Development (Cursor / IDE)",
+      "next": "Run the change on this machine and click through the path you care about.",
+      "items": [
+        { "id": "runs", "label": "The app runs locally", "check": "manual" },
+        { "id": "path", "label": "The main path has been clicked through", "check": "manual" }
+      ]
+    },
+    {
+      "id": "git",
+      "title": "Version Control (Git + GitHub)",
+      "next": "Commit the work and push it to GitHub.",
+      "items": [
+        { "id": "repo", "label": "This folder is a git repository", "check": "git" },
+        { "id": "remote", "label": "A remote is configured", "check": "remote" },
+        { "id": "pushed", "label": "The branch is pushed", "check": "manual" }
+      ]
+    },
+    {
+      "id": "backend",
+      "title": "Backend & Database",
+      "next": "Decide where data lives and check that the project actually contains that setup.",
+      "items": [
+        { "id": "choice", "label": "The data store is chosen and written down", "check": "manual" },
+        { "id": "config", "label": "A backend config is in the repo", "check": "backend" }
+      ]
+    },
+    {
+      "id": "auth",
+      "title": "Authentication & Security",
+      "next": "Name who can sign in, and keep secrets out of the repo.",
+      "items": [
+        { "id": "who", "label": "Who can sign in is decided", "check": "manual" },
+        { "id": "secrets", "label": "A local secrets file exists (contents are not read)", "check": "env" },
+        { "id": "review", "label": "Secrets are not committed", "check": "manual" }
+      ]
+    },
+    {
+      "id": "testing",
+      "title": "Testing",
+      "next": "Add a check you can re-run, then run it once for this change.",
+      "items": [
+        { "id": "exists", "label": "The repo has a test setup", "check": "tests" },
+        { "id": "ran", "label": "Tests were run for this change", "check": "manual" }
+      ]
+    },
+    {
+      "id": "deploy",
+      "title": "Deployment",
+      "next": "Put a deploy config in the repo and deploy once to a non-production URL.",
+      "items": [
+        { "id": "config", "label": "A deploy config is in the repo", "check": "deploy" },
+        { "id": "preview", "label": "A preview URL was opened", "check": "manual" }
+      ]
+    },
+    {
+      "id": "domain",
+      "title": "Domain & DNS",
+      "next": "Point the domain at the deployment and open it in a browser.",
+      "items": [
+        { "id": "dns", "label": "DNS points at the host", "check": "manual" },
+        { "id": "https", "label": "The public URL loads over HTTPS", "check": "manual" }
+      ]
+    },
+    {
+      "id": "monitoring",
+      "title": "Monitoring, Analytics & Error Tracking",
+      "next": "Choose one error tracker and confirm a test event arrives.",
+      "items": [
+        { "id": "tool", "label": "An error tracker or analytics tool is chosen", "check": "manual" },
+        { "id": "event", "label": "A test event was received", "check": "manual" }
+      ]
+    },
+    {
+      "id": "compliance",
+      "title": "Compliance & Legal",
+      "next": "Write down the privacy basis, and any agreement a partner still needs.",
+      "items": [
+        { "id": "privacy", "label": "Privacy notes (including GDPR, if it applies) are written", "check": "manual" },
+        { "id": "agreements", "label": "Required agreements are identified", "check": "manual" }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Soft Launch / Partner Review",
+      "next": "Send the build to one partner and record what they said.",
+      "items": [
+        { "id": "sent", "label": "A partner has the build", "check": "manual" },
+        { "id": "notes", "label": "Their feedback is written down", "check": "manual" }
+      ]
+    }
+  ]
+}

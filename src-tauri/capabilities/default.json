@@ -1,0 +1,19 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Overlay window. Window changes and the hotkey are done in Rust.",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "allow-snapshot-state",
+    "allow-set-item",
+    "allow-mark-stage-done",
+    "allow-set-project-path",
+    "allow-run-check",
+    "allow-save-note",
+    "allow-set-expanded",
+    "allow-set-click-through",
+    "allow-reload-pipeline",
+    "allow-hide-overlay"
+  ]
+}

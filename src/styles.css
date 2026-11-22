@@ -1,0 +1,191 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --tag: #1c2c33;
+  --stamp: #e7f2ec;
+  --reed: #c5ddd2;
+  --wax: #e4b54a;
+  --wax-ink: #2a2110;
+  --bad: #ffb4a8;
+  --shadow: 0 12px 28px rgba(8, 16, 18, 0.35);
+  --font: "Atkinson Hyperlegible", ui-sans-serif, system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --tag: #f4f7f5;
+    --stamp: #142228;
+    --reed: #24564c;
+    --wax: #8a5a00;
+    --wax-ink: #fff8e8;
+    --bad: #8c1d12;
+    --shadow: 0 12px 28px rgba(20, 34, 40, 0.16);
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: transparent;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--stamp);
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  box-sizing: border-box;
+  padding: 12px;
+}
+
+::selection {
+  background: var(--wax);
+  color: var(--wax-ink);
+}
+
+input,
+textarea {
+  caret-color: var(--wax);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--wax);
+  outline-offset: 2px;
+}
+
+[data-tauri-drag-region] {
+  cursor: grab;
+}
+
+.tag {
+  background: var(--tag);
+  color: var(--stamp);
+  box-shadow: var(--shadow);
+  border-radius: 14px;
+}
+
+.lamp {
+  color: var(--wax);
+}
+
+.lamp.is-done {
+  color: var(--reed);
+}
+
+.lamp-dot {
+  transform-origin: center;
+  animation: lamp-in 700ms ease-out 1;
+}
+
+@keyframes lamp-in {
+  from {
+    transform: scale(0.72);
+    opacity: 0.45;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lamp-dot {
+    animation: none;
+  }
+}
+
+.meter {
+  height: 6px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--stamp) 14%, var(--tag));
+}
+
+.meter > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--wax);
+}
+
+.btn {
+  min-height: 44px;
+  touch-action: manipulation;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--stamp) 12%, var(--tag));
+  color: var(--stamp);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: color-mix(in srgb, var(--stamp) 20%, var(--tag));
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.btn.primary {
+  background: var(--wax);
+  color: var(--wax-ink);
+  font-weight: 700;
+}
+
+.btn.primary:hover {
+  background: color-mix(in srgb, var(--wax) 86%, white);
+}
+
+.field {
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--stamp) 8%, var(--tag));
+  color: var(--stamp);
+  padding: 8px 10px;
+}
+
+.field::placeholder {
+  color: var(--reed);
+}
+
+.stage-current {
+  background: color-mix(in srgb, var(--wax) 18%, var(--tag));
+  border-radius: 10px;
+}
+
+.check {
+  accent-color: var(--wax);
+  width: 16px;
+  height: 16px;
+}
+
+.scroll {
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: var(--reed) transparent;
+}
+
+.quiet {
+  color: var(--reed);
+}
+
+.bad {
+  color: var(--bad);
+}
